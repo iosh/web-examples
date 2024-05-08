@@ -131,6 +131,22 @@ export const rpcProvidersByChainId: RpcProvidersByChainId = {
       symbol: "CELO",
     },
   },
+  1030: {
+    name: "conflux eSpace",
+    baseURL: "https://evm.confluxrpc.com",
+    token: {
+      name: "CFX",
+      symbol: "CFX",
+    },
+  },
+  71: {
+    name: "Conflux eSpace Testnet",
+    baseURL: "https://evmtestnet.confluxrpc.com",
+    token: {
+      name: "CFX",
+      symbol: "CFX",
+    },
+  },
 };
 
 const api: AxiosInstance = axios.create({
@@ -172,7 +188,7 @@ export async function apiGetAccountBalance(
     id: 1,
   });
   const { result } = response.data;
-  const balance = parseInt(result, 16).toString();
+  const balance = BigInt(result).toString();
   return { balance, ...token };
 }
 

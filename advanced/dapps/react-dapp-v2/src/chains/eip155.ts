@@ -18,6 +18,7 @@ export const EIP155Colors = {
   zksync: "90, 90, 90",
   celo: "60, 203, 132",
   arbitrum: "44, 55, 75",
+  "conflux eSpace": "23, 179, 138",
 };
 
 export const EIP155ChainData: ChainsMap = {
@@ -133,6 +134,20 @@ export const EIP155ChainData: ChainsMap = {
     slip44: 60,
     testnet: true,
   },
+  "1030": {
+    name: "conflux eSpace",
+    id: "eip155:1030",
+    rpc: ["https://evm.confluxrpc.com"],
+    slip44: 60,
+    testnet: false,
+  },
+  "71": {
+    name: "Conflux eSpace Testnet",
+    id: "eip155:71",
+    rpc: ["https://evmtestnet.confluxrpc.com"],
+    slip44: 60,
+    testnet: true,
+  },
 };
 
 export const EIP155Metadata: NamespaceMetadata = {
@@ -202,6 +217,14 @@ export const EIP155Metadata: NamespaceMetadata = {
   "421611": {
     logo: "/assets/" + "eip155-421611.png",
     rgb: EIP155Colors.arbitrum,
+  },
+  "1030": {
+    logo: "/assets/" + "eip155-1030.svg",
+    rgb: EIP155Colors["conflux eSpace"],
+  },
+  "71": {
+    logo: "/assets/" + "eip155-1030.svg",
+    rgb: EIP155Colors["conflux eSpace"],
   },
 };
 export function getChainMetadata(chainId: string): ChainMetadata {
